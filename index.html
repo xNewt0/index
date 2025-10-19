@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<title>Hacked By Newt</title>
+<style>
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+    overflow: hidden;
+    font-family: monospace;
+    background: url('https://i.hizliresim.com/j9n0n5q.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #f00;
+    position: relative;
+  }
+
+  .particle {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 10;
+    overflow: hidden;
+  }
+
+  .ball--one {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #FF0000;
+    box-shadow:
+      571px 173px #FF0000,
+      1732px 143px #FF0000,
+      1745px 454px #F30F0B,
+      234px 784px #FF0000,
+      1793px 1123px #F30F0B,
+      1076px 504px #F3510B,
+      633px 601px #F30F0B,
+      350px 630px #F3C50B,
+      1164px 782px #FF0000,
+      76px 690px #F3C50B,
+      1825px 701px #fff,
+      1646px 578px #fff,
+      544px 293px #E11D20,
+      445px 1061px #E11D20,
+      928px 47px #FF0000,
+      168px 1410px #FF0000,
+      777px 782px #FF0000,
+      1235px 1941px #FF0000,
+      104px 1690px #F30F0B,
+      1167px 1338px #fff,
+      345px 1652px #FF0000,
+      1682px 1196px #F30F0B,
+      1995px 494px #FF0000,
+      428px 798px #FF5722,
+      340px 1623px #F30F0B,
+      605px 349px #FF0000,
+      1339px 1344px #FF0000,
+      1102px 1745px #FF0000,
+      1592px 1676px #FF0000,
+      419px 1024px #FF9800,
+      630px 1033px #fff,
+      1995px 1644px #FF0000,
+      1092px 712px #FF0000,
+      1355px 606px #F30F0B,
+      622px 1881px orange,
+      1481px 621px #fff,
+      19px 1348px #FF0000,
+      864px 1780px #fff,
+      442px 1136px #B70003,
+      67px 712px #FF5722,
+      89px 1406px #F30F0B,
+      275px 321px yellow,
+      592px 630px yellow,
+      1012px 1690px yellow,
+      1749px 23px yellow,
+      94px 1542px #B70003,
+      1201px 1657px #B70003,
+      1505px 692px #B70003,
+      1799px 601px #F3510B,
+      656px 811px #FF0000,
+      701px 597px #FF0000,
+      1202px 46px #FF5722,
+      890px 569px #FF5722,
+      1613px 813px #B70003,
+      223px 252px #FF9800,
+      983px 1093px #F30F0B,
+      726px 1029px #FFC107,
+      1764px 778px #B70003,
+      622px 1643px #F30F0B,
+      174px 1559px #B70003,
+      212px 517px #FF0000,
+      340px 505px #FFF,
+      1700px 39px #FFF,
+      1768px 516px #F30F0B,
+      849px 391px #FF9800,
+      228px 1824px #FFF,
+      1119px 1680px #FFC107,
+      812px 1480px #B70003,
+      1438px 1585px #B70003,
+      137px 1397px #FFF,
+      1080px 456px #B70003,
+      1208px 1437px #F3510B,
+      857px 281px #F30F0B,
+      1254px 1306px #B70003,
+      987px 990px #B70003,
+      1655px 911px #FF0000,
+      1102px 1216px #FF5722,
+      1807px 1044px #FFF,
+      660px 435px #F3510B,
+      299px 678px #B70003,
+      1193px 115px #FF9800,
+      918px 290px #B70003,
+      1447px 1422px #B70003,
+      91px 1273px #B70003,
+      108px 223px #B70003,
+      146px 754px #FF0000,
+      461px 1446px #FF5722,
+      1004px 391px #B70003,
+      1529px 516px #F30F0B,
+      1206px 845px #B70003,
+      347px 583px #B70003,
+      1102px 1332px #F30F0B,
+      709px 1756px #FF0000,
+      1972px 248px #FFF,
+      1669px 1344px #FF5722,
+      1132px 406px #F30F0B,
+      320px 1076px #B70003,
+      126px 943px #B70003,
+      263px 604px #FF5722,
+      1546px 692px #F30F0B;
+  }
+
+  @keyframes animStar {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-2000px); }
+  }
+  .ball--one {
+    animation: animStar 150s linear infinite;
+  }
+
+  .overlay {
+    position: relative;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 100px; /* BİR TIK ALTA İNDİ */
+    z-index: 20;
+    text-align: center;
+    gap: 15px;
+  }
+  .logo {
+    max-width: 250px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 10px red);
+  }
+  h1 {
+    font-size: 3rem;
+    text-shadow: 0 0 10px red;
+    margin-bottom: 0;
+    line-height: 1.1;
+  }
+  .signature {
+    font-size: 1.2rem;
+    color: #f33;
+    text-shadow: 0 0 5px red;
+    font-style: italic;
+    margin-top: 20px;
+  }
+
+  .music-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(255, 0, 0, 0.7);
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-family: monospace;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 10px red;
+    z-index: 30;
+    transition: background-color 0.3s ease;
+  }
+  .music-button:hover {
+    background-color: rgba(255, 0, 0, 1);
+  }
+
+  iframe {
+    width: 0; height: 0; border: none; opacity: 0; pointer-events: none;
+    position: fixed; bottom: 0; right: 0;
+  }
+</style>
+</head>
+<body>
+
+  <div class="particle">
+    <div class="ball--one"></div>
+  </div>
+
+  <div class="overlay">
+    <img class="logo" src="https://i.imgur.com/8CHWTBQ.png" alt="Kryzlo Logo" />
+    <h1>Hacked By Newt</h1>
+    <div class="signature">- İstediğimiz Zaman, İstediğimiz Yerde -</div>
+  </div>
+
+  <button class="music-button" id="musicBtn">Müziği Aç</button>
+
+  <iframe id="musicPlayer" src="" allow="autoplay"></iframe>
+
+  <script>
+    const btn = document.getElementById('musicBtn');
+    const iframe = document.getElementById('musicPlayer');
+    let playing = false;
+
+    btn.addEventListener('click', () => {
+      if (!playing) {
+        iframe.src = "https://www.youtube.com/embed/nrzFZ6CE2r4?autoplay=1&loop=1&playlist=nrzFZ6CE2r4";
+        btn.textContent = "Müziği Kapat";
+        playing = true;
+      } else {
+        iframe.src = "";
+        btn.textContent = "Müziği Aç";
+        playing = false;
+      }
+    });
+  </script>
+
+  <?php
+  // PHP kodu buraya eklenebilir
+  // Örnek: Tarih ve IP bilgisi gösterme
+  date_default_timezone_set('Europe/Istanbul');
+  $tarih = date('d.m.Y H:i:s');
+  $ip = $_SERVER['REMOTE_ADDR'];
+  
+  echo "<div style='position: fixed; bottom: 20px; left: 20px; color: #f00; font-family: monospace; font-size: 12px; z-index: 30; background: rgba(0,0,0,0.7); padding: 5px; border-radius: 5px;'>";
+  echo "Tarih: " . $tarih . "<br>";
+  echo "IP: " . $ip;
+  echo "</div>";
+  ?>
+</body>
+</html>
